@@ -19,7 +19,7 @@
     />
     <style>
       body {
-        font-family: Monospace;
+      font-family: Monospace;
         background-color: #000000;
         margin: 0px;
         overflow: hidden;
@@ -189,33 +189,6 @@
       }
       // Mouse tooltip render
 
-      var isLicenseAgreed = false;
-      var license =
-        '<div class="myBox" style="text-align: left;"><p><strong>End-User License Agreement</strong></p><p>University of Michigan Office of Technology Transfer File: 2019-247</p><p>IMPORTANT &ndash; READ CAREFULLY: This Agreement is a legal agreement between &ldquo;LICENSEE&rdquo; (defined below) and The Regents of The University of Michigan, a constitutional corporation of the state of Michigan (&ldquo;MICHIGAN&rdquo;).</p><p>BACKGROUND</p><ol><li>Faculty at the University of Michigan have developed a proprietary application and related documentation, referred to as &ldquo;Online Body Shape Models&rdquo;, and further described in MICHIGAN Office of Technology File 2019-247 (hereinafter referred to as "MODEL"); and</li><li>LICENSEE desires to obtain, and MICHIGAN, consistent with its mission of education and research, desires to grant, a license to use the MODEL subject to the terms and conditions set forth below; and</li></ol><p>The parties therefore agree as follows:</p><ol><li>&nbsp;&nbsp; LICENSE</li><li>The term &ldquo;LICENSEE&rdquo; shall mean the person downloading the MODEL solely for personal use by that person on the personal equipment of that person</li><li>Subject to the terms and conditions of this Agreement, MICHIGAN hereby grants to LICENSEE a non-exclusive, non-transferable right to copy, download and use the MODEL solely by LICENSEE for academic, research, and non-commercial purposes.</li><li>LIMITATION OF LICENSE AND RESTRICTIONS</li><li>LICENSEE shall not translate, reverse engineer, decompile, disassemble, modify, create derivative works of or publicly display the MODEL, in whole or in part, unless expressly authorized by this Agreement.</li><li>LICENSEE agrees that it shall use the MODEL only for LICENSEE\'S sole and exclusive use, and shall not disclose, sell, license, or otherwise distribute the MODEL to any third party without the prior written consent of MICHIGAN. LICENSEE shall not assign this Agreement, and any attempt by LICENSEE to assign it shall be void from the beginning. LICENSEE agrees to secure and protect the MODEL and any copies in a manner consistent with the maintenance of MICHIGAN\'S rights in the MODEL and to take appropriate action by instruction or agreement with its employees who are permitted access to the MODEL in order to satisfy LICENSEE\'S obligations under this Agreement.</li><li>LICENSEE agrees that it shall include copyright notice &ldquo;Copyright 2018 The Regents of The University of Michigan &ndash; Biosciences Group UMTRI&rdquo; in all results, publications, presentations or other public displays of results which utilize the MODEL in whole or part.</li></ol><p>III. TITLE AND OWNERSHIP</p><ol><li>No ownership rights of MICHIGAN in the MODEL are conferred upon LICENSEE by this Agreement.</li><li>LICENSEE acknowledges MICHIGAN\'S proprietary rights in the MODEL and agrees to reproduce all copyright notices supplied by MICHIGAN on all copies of the MODEL, and on all MODEL outputs and copies of MODEL outputs.</li><li>DISCLAIMER OF WARRANTY AND LIMITATION OF LIABILITY</li><li>THE<strong> MODEL</strong> IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. <strong>MICHIGAN</strong> DOES NOT WARRANT THAT THE FUNCTIONS CONTAINED IN THE <strong>MODEL</strong> WILL MEET <strong>LICENSEE\'S </strong>REQUIREMENTS OR THAT OPERATION WILL BE UNINTERRUPTED OR ERROR FREE. MICHIGAN shall not be liable for special, indirect, incidental, or consequential damages with respect to any claim on account of or arising from this Agreement or use of the MODEL, even if MICHIGAN has been or is hereafter advised of the possibility of such damages. Because some states do not allow certain exclusions or limitations on implied warranties or of liability for consequential or incidental damages, the above exclusions may not apply to LICENSEE. In no event, however, will MICHIGAN be liable to LICENSEE, under any theory of recovery, in an amount in excess of the license fee paid by LICENSEE under this Agreement.</li><li>LICENSEE agrees that MICHIGAN has no obligation to provide to LICENSEE any maintenance, support, or update services. Should MICHIGAN provide any revised versions of the MODEL to LICENSEE, LICENSEE agrees that this license agreement shall apply to such revised versions.</li><li>The MODEL does not provide medical advice and is not intended as a sole means for patient diagnosis.&nbsp; It is not a substitute for professional medical advice, diagnosis or treatment.&nbsp; The MODEL is intended for informational purposes only.&nbsp; MICHIGAN does not warrant or guarantee the accuracy or completeness of the information in the MODEL and specifically disclaims any liability therefore.</li><li>WARRANTY OF LICENSEE</li></ol><p>LICENSEE warrants and represents that it will carefully review any documentation or instructional material provided by MICHIGAN.</p><ol><li>TERMINATION</li></ol><p>If LICENSEE at any time fails to abide by the terms of this Agreement, MICHIGAN shall have the right to immediately terminate the license granted herein, require the return or destruction of all copies of the MODEL from LICENSEE and certification in writing as to such return or destruction, and pursue any other legal or equitable remedies available.</p><p>VII. MISCELLANEOUS</p><ol><li>This Agreement shall be construed in accordance with the laws of the state of Michigan. Should LICENSEE for any reason bring a claim, demand, or other action against MICHIGAN, its agents or employees, arising out of this Agreement or the MODEL licensed herein, LICENSEE agrees to bring said claim only in the Michigan Court of Claims.</li><li>THIS AGREEMENT REPRESENTS THE COMPLETE AND EXCLUSIVE STATEMENT OF THE AGREEMENT BETWEEN<strong>MICHIGAN</strong> AND <strong>LICENSEE </strong>AND SUPERSEDES ALL PRIOR AGREEMENTS, PROPOSALS, REPRESENTATIONS AND OTHER COMMUNICATIONS, VERBAL OR WRITTEN, BETWEEN THEM WITH RESPECT TO USE OF THE<strong>MODEL</strong>. THIS AGREEMENT MAY BE MODIFIED ONLY WITH THE MUTUAL WRITTEN APPROVAL OF AUTHORIZED REPRESENTATIVES OF THE PARTIES.</li><li>The terms and conditions of this Agreement shall prevail notwithstanding any different, conflicting, or additional terms or conditions which may appear in any purchase order or other document submitted by LICENSEE. LICENSEE agrees that such additional or inconsistent terms are deemed rejected by MICHIGAN.</li><li>Unless otherwise exempt therefrom, LICENSEE agrees that it will be responsible for any sales, use or excise taxes imposed by any governmental unit in this transaction except income taxes.</li><li>LICENSEE acknowledges that the MODEL is of United States origin. LICENSEE agrees to comply with all applicable international and national laws that apply to the MODEL, including the United States Export Administration Regulations, as well as end-user, end-use, and destination restrictions issued by the United States.</li><li>All copies of the MODEL distributed by LICENSEE shall contain copyright notice in appropriate locations and forms.&nbsp; Such notices shall be consistent with any instructions which might be provided by MICHIGAN; and shall include all copyright and other notices in the form supplied by MICHIGAN</li><li>MICHIGAN and LICENSEE agree that any xerographically or electronically reproduced copy of this fully-executed agreement shall have the same legal force and effect as any copy bearing original signatures of the parties.</li></ol><p>&nbsp;</p></div>';
-
-      function CheckLicense() {
-        if (isLicenseAgreed) return true;
-
-        Swal.fire({
-          title: "End-User License Agreement",
-          showCancelButton: true,
-          width: "1000px",
-          padding: "6em",
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          heightAuto: true,
-          confirmButtonText: "Agreed",
-          html: license,
-        }).then((result) => {
-          if (result.value) {
-            Swal.fire("Agreed!", "Please try your download again", "success");
-            isLicenseAgreed = true;
-          }
-        });
-
-        if (!isLicenseAgreed) return false;
-        else return true;
-      }
 
       //End line num of PCA data
       var endline = 43609;
@@ -254,7 +227,6 @@
 
       // Hongting: Get parameters via URL
       var parameters = location.search.substring(1).split("&");
-
       // Track bars
       var anth = new (function () {
         //1773.75625	27.55375025	0.520817368	38.801125	0.874477955	1.139730774
@@ -264,69 +236,6 @@
         this.SHS = 0.52;
         this.AGE = 38;
         this.LandmarkView = false;
-        this.FileType = "obj";
-        this.FileName = "BioHuman";
-        this.ExportGeometry = function () {
-          if (!CheckLicense()) return;
-
-          // Read version info
-          var versionInfo = getVersion();
-
-          /// get current day
-          var today = getDateNow();
-          if (this.FileType == "stl") {
-            ASCIIStlWriter.save(geometry, this.FileName + "_" + today + ".stl");
-          } else if (this.FileType == "obj") {
-            var exporter = new THREE.OBJExporter();
-            var objreturn = exporter.parse(geometry);
-
-            var blob = new Blob([objreturn], { type: "text/plain" });
-
-            saveAs(blob, this.FileName + "_" + today + ".obj");
-          }
-
-          var parametervalue =
-            "p" +
-            "_" +
-            this.STATURE.toFixed() +
-            "_" +
-            this.BMI.toFixed(1) +
-            "_" +
-            this.SHS.toFixed(2) +
-            "_" +
-            this.AGE.toFixed();
-          /// count download
-          gtag("event", "Model_Download", {
-            event_category: "Adult_Male_Standing",
-            event_label: parametervalue,
-          });
-        };
-        this.Landmarks = function () {
-          if (!CheckLicense()) return;
-          ASCIILMWriter.save(
-            PCAdata,
-            predAnthNum,
-            predLandmarkNum,
-            this.FileName + "_" + getDateNow() + "_landmark.csv"
-          );
-
-          gtag("event", "Landmarks_Download", {
-            event_category: "Adult_Male_Standing",
-          });
-        }; //
-        this.BodyDimensions = function () {
-          if (!CheckLicense()) return;
-          ASCIIAnthroWriter.save(
-            PCAdata,
-            predAnthNum,
-            predLandmarkNum,
-            this.FileName + "_" + getDateNow() + "_anthro.csv"
-          );
-
-          gtag("event", "Anthro_Download", {
-            event_category: "Adult_Male_Standing",
-          });
-        };
         this.RandomModel = function () {
           this.STATURE = Math.random() * (2000 - 1500) + 1500;
           this.BMI = Math.random() * (55 - 16) + 16;
@@ -334,6 +243,7 @@
           this.AGE = Math.random() * (80 - 18) + 18;
         };
       })();
+   
       var gui = new dat.GUI();
       gui.width = 350;
       gui.add(anth, "STATURE", 1500, 2060).name("Stature (mm)");
@@ -348,13 +258,6 @@
         .name("View Landmarks")
         .onChange(onLmViewChange);
       gui.add(anth, "RandomModel").name("Generate Random Model");
-
-      var folder2 = gui.addFolder("File Export");
-      folder2.add(anth, "FileName").name("Input File Name");
-      folder2.add(anth, "FileType", ["obj", "stl"]);
-      folder2.add(anth, "ExportGeometry").name("Export Body Shape Model");
-      folder2.add(anth, "Landmarks").name("Export Landmarks");
-      folder2.add(anth, "BodyDimensions").name("Export Body Dimentions");
 
       var folder3 = gui.addFolder("Visualization Option");
       var palette = new (function () {
@@ -564,18 +467,19 @@
         PCAdata = data;
 
         // model position in the scene
-        var centerHeight = -0.8;
+        var centerHeight = -0.9;
 
         container = document.createElement("div");
         document.body.appendChild(container);
 
         camera = new THREE.PerspectiveCamera(
-          40,
+          45,
           window.innerWidth / window.innerHeight,
           0.1,
-          15
+          1500
         );
-        camera.position.set(-2.6, 0.5, 1);
+        // camera.position.set(-2.6, 0.5, 1);
+        camera.position.set(-3, 0, 0);
 
         scene = new THREE.Scene();
         scene.fog = new THREE.Fog(0x111111, 2, 15);
@@ -593,8 +497,7 @@
         sceneOrtho = new THREE.Scene();
         //Mouse tooltip//
 
-        // Ground
-
+        // Ground 地板
         plane = new THREE.Mesh(
           new THREE.PlaneBufferGeometry(40, 40),
           new THREE.MeshPhongMaterial({
@@ -603,20 +506,19 @@
             specular: 0xdddddd,
           })
         );
-        plane.rotation.x = -Math.PI / 2;
-        plane.position.y = -1.2;
+        plane.rotation.x = -Math.PI / 2; // 默认是Y轴，需要旋转90度
+        plane.position.y = -1.2; // 默认y为0，已人物中心为原点
         scene.add(plane);
 
-        plane.receiveShadow = true;
+        plane.receiveShadow = true; // 地板可以显示被投放的阴影
 
         // PLY file
         var loader = new THREE.PLYLoader();
         loader.addEventListener("load", function (event) {
           //loader.load( 'model/mean_model_tri.ply' , function ( event ) {
-
           geometry = event.content;
 
-          // save the vertices data into isolated variable
+          // save the vertices data into isolated variable 保留原始的数据，复原时需要
           if (!geometryZero) {
             geometryZero = new Array(0);
             for (j = 0; j < geometry.vertices.length; j++) {
@@ -638,7 +540,7 @@
           context1.fillStyle = "rgba(0,0,0,0.95)";
           context1.fillText("Hello, world!", 0, 20);
 
-          // canvas contents will be used for a texture
+          // canvas contents will be used for a texture canvas1用作纹理
           texture1 = new THREE.Texture(canvas1);
           texture1.needsUpdate = true;
 
@@ -650,7 +552,7 @@
           sceneOrtho.add(sprite1);
           //Mouse tooltip messagebox init
 
-          // Hongting: Adjust the anthro parameters there is.
+          // Hongting: Adjust the anthro parameters there is. 接收通过URL传输的参数
           if (parameters != "") {
             for (i = 0; i < parameters.length; i++) {
               if (!parameters[i].includes("=")) continue;
@@ -687,27 +589,27 @@
             geometry.vertices[i].z = geometryZero[i].z + diffz;
           }
 
-          geometry.verticesNeedUpdate = true;
+          geometry.verticesNeedUpdate = true; // 监听更改
 
-          geometry.mergeVertices();
-          geometry.computeFaceNormals();
+          geometry.mergeVertices(); // 合并顶点
+          geometry.computeFaceNormals(); // 面法线
 
-          geometry.computeVertexNormals();
+          geometry.computeVertexNormals(); // 顶点法线:
 
-          // Hongting: Automatically export the manikin in OBJ format.
+          // Hongting: Automatically export the manikin in OBJ format. // 导出
           if (parameters != "") {
             ASCIILMWriter.save(
               PCAdata,
               predAnthNum,
               predLandmarkNum,
-              "UMTIRIBH_male_" + parameters + "_landmark.csv"
+              "UMTIRIBH_male_" + parameters + "_landmark.csv"  // 导出标记
             );
 
             ASCIIAnthroWriter.save(
               PCAdata,
               predAnthNum,
               predLandmarkNum,
-              "UMTIRIBH_male_" + parameters + "_anthro.csv"
+              "UMTIRIBH_male_" + parameters + "_anthro.csv" // 导出
             );
 
             var exporter = new THREE.OBJExporter();
@@ -743,7 +645,7 @@
             side: THREE.BackSide,
           });
           outlineMesh1 = new THREE.Mesh(geometry, outlineMaterial1);
-          outlineMesh1.position.set(0, centerHeight - 0.012, 0);
+          outlineMesh1.position.set(10, centerHeight - 0.012, 0);
           outlineMesh1.rotation.set(-Math.PI / 2, 0, 0);
           outlineMesh1.scale.set(0.001, 0.001, 0.001);
 
@@ -752,7 +654,7 @@
 
           document.getElementById("text").style.display = "none";
 
-          // Landmarks
+          // Landmarks 坐标点
           lmGeometry = new THREE.Geometry();
           lmMaterial = new THREE.PointCloudMaterial({
             // Mouse tooltip
@@ -779,14 +681,14 @@
             //Mouse tooltip
           }
 
-          pointCloud = new THREE.PointCloud(lmGeometry, lmMaterial);
+          pointCloud = new THREE.PointCloud(lmGeometry, lmMaterial); // 点云
           pointCloud.position.set(0, centerHeight, 0);
           pointCloud.rotation.set(-Math.PI / 2, 0, 0);
           pointCloud.scale.set(0.001, 0.001, 0.001);
 
           scene.add(pointCloud);
 
-          //skeleton
+          //skeleton 骨骼
           skelIds = [
             [0, 1],
             [1, 2],
@@ -830,6 +732,7 @@
 
         loader.load("model/mean_model_tri.ply");
 
+        // 光
         var hemisphereLight = new THREE.HemisphereLight(
           0xffffff,
           0xffff00,
@@ -877,7 +780,7 @@
         window.addEventListener("resize", onWindowResize, false);
 
         // Mouse tooltip init
-        raycaster = new THREE.Raycaster();
+        raycaster = new THREE.Raycaster(); // 被鼠标选中的一些物体
         mouse = new THREE.Vector2();
         document.addEventListener("mousemove", onDocumentMouseMove, false);
         // Mouse tooltip init
@@ -914,26 +817,6 @@
         }
       }
 
-      function setShadowedLight(directionalLight) {
-        directionalLight.castShadow = true;
-        // directionalLight.shadowCameraVisible = true;
-
-        var d = 3;
-        directionalLight.shadowCameraLeft = -d;
-        directionalLight.shadowCameraRight = d;
-        directionalLight.shadowCameraTop = d;
-        directionalLight.shadowCameraBottom = -d;
-
-        directionalLight.shadowCameraNear = 0;
-        directionalLight.shadowCameraFar = 6;
-
-        directionalLight.shadowMapWidth = 4096;
-        directionalLight.shadowMapHeight = 4096;
-
-        directionalLight.shadowBias = -0.001;
-        directionalLight.shadowDarkness = 0.2;
-      }
-
       function onWindowResize() {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
@@ -951,7 +834,6 @@
 
       function animate() {
         requestAnimationFrame(animate);
-
         controls.update();
 
         light1.position.x = -1.45 * camera.position.z;
